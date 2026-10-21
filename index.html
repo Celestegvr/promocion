@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plataforma Cafetalera</title>
+  <meta name="description" content="Plataforma digital para cooperativas cafetaleras de Nicaragua: registra el café en el centro de acopio, incluso sin internet, y controla peso, humedad, liquidaciones y trazabilidad desde un solo lugar.">
+  <meta name="theme-color" content="#12233b">
+  <meta property="og:title" content="Plataforma Cafetalera · Cada grano, bajo control">
+  <meta property="og:description" content="Registro del café sin internet, cálculo de grano oro, liquidaciones en córdobas y trazabilidad por socio.">
+  <meta property="og:image" content="img/hero-la-dalia.jpg">
+  <link rel="icon" href="img/icono.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/promo.css">
+</head>
+<body>
+  <!-- Iconos SVG (sin emojis) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-nube-off" viewBox="0 0 24 24"><path d="M2 2l20 20M5.8 8.3A6 6 0 0 0 7 20h10m3.6-1.9A4.5 4.5 0 0 0 17.5 11h-.6A6 6 0 0 0 9.7 6.6"/></symbol>
+      <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8M21 4v5h-5M3 20v-5h5"/></symbol>
+      <symbol id="i-balanza" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3.5 3.5 0 0 0 6 0L5 7zm14 0l-3 7a3.5 3.5 0 0 0 6 0l-3-7z"/></symbol>
+      <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 2.7s7 7.3 7 12.3a7 7 0 0 1-14 0c0-5 7-12.3 7-12.3z"/></symbol>
+      <symbol id="i-recibo" viewBox="0 0 24 24"><path d="M5 2h14v20l-3-2-2 2-2-2-2 2-2-2-3 2V2zM9 7h6M9 11h6M9 15h4"/></symbol>
+      <symbol id="i-ruta" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5"/></symbol>
+      <symbol id="i-grafica" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 6-7"/></symbol>
+      <symbol id="i-usuarios" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14a6 6 0 0 1 3 6"/></symbol>
+      <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+      <symbol id="i-celular" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3.5" width="20" height="13" rx="2"/><path d="M8 21h8M12 16.5V21"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-volumen" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+      <symbol id="i-papel" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+      <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+      <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 3L2 20.5h20L12 3z"/><path d="M12 10v4.5M12 17.5v.5"/></symbol>
+      <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-mensaje" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.5L3 21l1.5-5.2A8.5 8.5 0 1 1 21 12z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+      <symbol id="i-hoja" viewBox="0 0 24 24"><path d="M5 19c0-9 6-15 15-15 0 9-6 15-15 15zM5 19l7-7"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-in">
+      <a class="marca" href="#inicio" aria-label="Plataforma Cafetalera, inicio">
+        <span class="marca-logo"><svg><use href="#i-hoja"/></svg></span>
+        <span><b>Plataforma Cafetalera</b><small>Cooperativas de Nicaragua</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Secciones">
+        <a href="#problema">El problema</a>
+        <a href="#solucion">La solución</a>
+        <a href="#como">Cómo funciona</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#planes">Planes</a>
+        <a href="#preguntas">Preguntas</a>
+        <a class="btn btn-oro btn-sm" href="#demo">Solicitar demostración</a>
+      </nav>
+      <button class="nav-menu" id="navMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <img class="hero-foto" src="img/hero-la-dalia.jpg" alt="Manos de un recolector sostienen un canasto lleno de café maduro en El Tuma - La Dalia, Matagalpa" fetchpriority="high">
+      <div class="hero-velo"></div>
+      <div class="hero-in">
+        <span class="pre aparece">Software para cooperativas cafetaleras</span>
+        <h1 class="aparece">Tu cooperativa produce café.<br><em>Nosotros ayudamos a que cada registro quede bajo control.</em></h1>
+        <p class="hero-sub aparece">Registra el café desde el centro de acopio, <b>incluso sin internet</b>. Controla peso, humedad, liquidaciones y trazabilidad desde una sola plataforma, en córdobas.</p>
+        <div class="hero-cta aparece">
+          <a class="btn btn-oro" href="#demo">Solicita una demostración gratuita <svg><use href="#i-flecha"/></svg></a>
+          <a class="btn btn-claro" href="https://plataforma-cafetalera.vercel.app/">Probar el prototipo</a>
+        </div>
+        <ul class="hero-sellos aparece">
+          <li><svg><use href="#i-nube-off"/></svg> Funciona sin señal</li>
+          <li><svg><use href="#i-gota"/></svg> Humedad y grano oro</li>
+          <li><svg><use href="#i-recibo"/></svg> Liquidación en C$</li>
+        </ul>
+      </div>
+      <p class="hero-credito">Foto: Maren Barbee, El Tuma - La Dalia, Matagalpa · CC BY-SA 2.0</p>
+    </section>
+
+    <!-- CIFRAS -->
+    <section class="cifras" aria-label="Cifras clave">
+      <div class="cifra"><b><span data-contar="7" data-pre="3–">0</span> %</b><span>de error en liquidaciones hechas a mano</span></div>
+      <div class="cifra"><b>hasta <span data-contar="15">0</span> días</b><span>para cerrar el mes con libretas y Excel</span></div>
+      <div class="cifra"><b><span data-contar="42">0</span></b><span>cooperativas en Matagalpa, Jinotega y Nueva Segovia con este perfil</span></div>
+      <div class="cifra"><b><span data-contar="4">0</span> pasos</b><span>para registrar una entrega, con o sin señal</span></div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="seccion" id="problema">
+      <div class="dos-col">
+        <figure class="foto-marco revela">
+          <img src="img/pesaje.jpg" alt="Productores con sacos de café rojo esperando el pesaje en una finca de Nicaragua" loading="lazy">
+          <figcaption>El pesaje de la cosecha determina el pago de cada familia. Foto: BluesyPete, Nicaragua · CC BY-SA 3.0</figcaption>
+        </figure>
+        <div class="revela">
+          <span class="pre">El problema</span>
+          <h2>Cada quintal cuenta.<br>En papel, cada error también.</h2>
+          <p class="lead">En plena cosecha, el café entra por varios centros de acopio a la vez. Hoy todo depende de talonarios, cuadernos, calculadoras y hojas de Excel que alguien tiene que juntar al final.</p>
+          <ul class="dolores">
+            <li><span class="ico ico-rojo"><svg><use href="#i-papel"/></svg></span><div><b>Recibos que se pierden o se mojan</b><p>Sin copia, no hay forma de probar cuánto entregó el socio.</p></div></li>
+            <li><span class="ico ico-rojo"><svg><use href="#i-gota"/></svg></span><div><b>Reclamos por el descuento de humedad</b><p>Cada acopiador calcula distinto y el socio no entiende por qué le rebajaron.</p></div></li>
+            <li><span class="ico ico-rojo"><svg><use href="#i-reloj"/></svg></span><div><b>Cierres que tardan semanas</b><p>Consolidar libretas de varios centros puede tomar hasta 15 días.</p></div></li>
+            <li><span class="ico ico-rojo"><svg><use href="#i-alerta"/></svg></span><div><b>Liquidaciones con errores</b><p>Entre 3 % y 7 % de error al sumar a mano: dinero que alguien deja de recibir.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCION -->
+    <section class="seccion seccion-oscura" id="solucion">
+      <div class="centro revela">
+        <span class="pre">La solución</span>
+        <h2>Dos herramientas conectadas.<br>Un solo registro, de la báscula a la oficina.</h2>
+        <p class="lead">Lo que el acopiador anota en el campo llega solo al panel de la administración en cuanto hay señal. Nadie vuelve a transcribir nada.</p>
+      </div>
+
+      <div class="productos">
+        <article class="producto revela">
+          <div class="producto-txt">
+            <span class="etiqueta"><svg><use href="#i-celular"/></svg> App de campo</span>
+            <h3>Para el acopiador, tan simple como un talonario</h3>
+            <p>Botones grandes, pasos guiados y una voz que explica qué hacer. Pensada para quien nunca ha usado una aplicación.</p>
+            <ul class="lista-check">
+              <li><svg><use href="#i-check"/></svg> Registra socio, peso, sacos, humedad y calidad</li>
+              <li><svg><use href="#i-check"/></svg> Calcula el grano oro en el momento</li>
+              <li><svg><use href="#i-check"/></svg> Guarda todo aunque no haya internet</li>
+              <li><svg><use href="#i-check"/></svg> Imprime o comparte el recibo al socio</li>
+            </ul>
+          </div>
+          <div class="telefonos">
+            <div class="telefono t-atras"><img src="img/app-inicio.png" alt="Pantalla de inicio de la app de campo del Centro El Roble" loading="lazy"></div>
+            <div class="telefono t-frente"><img src="img/app-recibo.jpg" alt="Recibo digital de acopio con grano oro y valor estimado en córdobas" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="producto producto-inv revela">
+          <div class="producto-txt">
+            <span class="etiqueta"><svg><use href="#i-monitor"/></svg> Panel web</span>
+            <h3>Para la gerencia, toda la cosecha en una pantalla</h3>
+            <p>Entregas de todos los centros de acopio, al día y sin esperar a que lleguen las libretas.</p>
+            <ul class="lista-check">
+              <li><svg><use href="#i-check"/></svg> Centros de acopio, socios y acopiadores</li>
+              <li><svg><use href="#i-check"/></svg> Precio por temporada y liquidaciones en C$</li>
+              <li><svg><use href="#i-check"/></svg> Anticipos, deducciones y hoja de pago</li>
+              <li><svg><use href="#i-check"/></svg> Reportes y bitácora de cada cambio</li>
+            </ul>
+          </div>
+          <div class="navegador">
+            <div class="navegador-barra"><i></i><i></i><i></i><span>Panel administrativo</span></div>
+            <img src="img/panel-resumen.png" alt="Panel administrativo con el resumen de la cosecha por centro de acopio" loading="lazy">
+          </div>
+        </article>
+      </div>
+      <p class="nota-clara centro">Capturas del prototipo funcional con datos ficticios de demostración.</p>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="seccion" id="como">
+      <div class="centro revela">
+        <span class="pre">Cómo funciona</span>
+        <h2>Del saco al pago en cuatro pasos</h2>
+      </div>
+      <div class="pasos revela">
+        <div class="pasos-lista" role="tablist" aria-label="Pasos">
+          <button class="paso activo" role="tab" aria-selected="true" data-paso="0"><span>1</span><div><b>Registrar la entrega</b><small>En el centro de acopio</small></div></button>
+          <button class="paso" role="tab" aria-selected="false" data-paso="1"><span>2</span><div><b>Medir humedad y calidad</b><small>Cálculo automático</small></div></button>
+          <button class="paso" role="tab" aria-selected="false" data-paso="2"><span>3</span><div><b>Entregar el recibo</b><small>Y sincronizar con la oficina</small></div></button>
+          <button class="paso" role="tab" aria-selected="false" data-paso="3"><span>4</span><div><b>Liquidar al socio</b><small>Desde el panel web</small></div></button>
+        </div>
+        <div class="pasos-vista">
+          <div class="pasos-pantalla" id="pasoPantalla"><img src="img/app-inicio.png" alt="" id="pasoImg"></div>
+          <div class="pasos-texto" id="pasoTexto" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULADORA -->
+    <section class="seccion seccion-crema" id="calculadora">
+      <div class="dos-col">
+        <div class="revela">
+          <span class="pre">Pruébalo</span>
+          <h2>Transparencia que el socio entiende</h2>
+          <p class="lead">La plataforma aplica la misma regla en todos los centros de acopio. Mueve los valores y mira cómo se calcula una entrega de pergamino seco.</p>
+          <p class="nota">Ejemplo con valores de referencia: factor 0.80 qq oro por qq de pergamino y humedad base de 12 %. Cada cooperativa configura sus propios factores y su precio.</p>
+        </div>
+        <form class="calc revela" id="calc" onsubmit="return false">
+          <label>Peso neto de pergamino seco <output id="oPeso">12.5 qq</output>
+            <input type="range" id="cPeso" min="1" max="60" step="0.5" value="12.5">
+          </label>
+          <label>Humedad medida <output id="oHum">14 %</output>
+            <input type="range" id="cHum" min="10" max="20" step="0.5" value="14">
+          </label>
+          <label>Precio de la temporada (C$ por qq oro)
+            <input type="number" id="cPrecio" min="0" step="50" value="9150" inputmode="numeric">
+          </label>
+          <div class="calc-res">
+            <div><small>Ajuste por humedad</small><b id="rAjuste">−</b></div>
+            <div><small>Grano oro</small><b id="rOro">−</b></div>
+            <div class="calc-total"><small>Valor estimado para el socio</small><b id="rMonto">−</b></div>
+          </div>
+          <p class="calc-formula" id="rFormula"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS POR ACTOR -->
+    <section class="seccion" id="beneficios">
+      <div class="centro revela">
+        <span class="pre">Para quién</span>
+        <h2>Gana toda la cooperativa</h2>
+      </div>
+      <div class="actores">
+        <article class="actor revela">
+          <span class="ico"><svg><use href="#i-grafica"/></svg></span>
+          <h3>Junta directiva y gerencia</h3>
+          <p>Deciden con información del día: cuánto café ha entrado, en qué centro, a qué calidad y cuánto se debe pagar.</p>
+          <ul><li>Cierres en horas, no en semanas</li><li>Menos pérdidas por errores</li><li>Origen verificable para compradores</li></ul>
+        </article>
+        <article class="actor revela">
+          <span class="ico"><svg><use href="#i-balanza"/></svg></span>
+          <h3>Acopiadores</h3>
+          <p>Dejan de sumar con calculadora y de cuidar talonarios. La app guía cada paso y les habla en voz alta si lo necesitan.</p>
+          <ul><li>Pasos grandes y claros</li><li>Ayuda por voz</li><li>Cierre del día con un botón</li></ul>
+        </article>
+        <article class="actor actor-foto revela">
+          <img src="img/productora.jpg" alt="Productora de café en su parcela con sombra de musáceas, en el norte de Nicaragua" loading="lazy">
+          <div>
+            <h3>Socios productores</h3>
+            <p>Reciben un recibo claro en cada entrega y una liquidación que pueden revisar. Confianza en su cooperativa.</p>
+            <small>Foto: ElleMegan, norte de Nicaragua · CC BY-SA 4.0</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ANTES / DESPUES -->
+    <section class="seccion seccion-oscura" id="comparacion">
+      <div class="centro revela">
+        <span class="pre">Antes y después</span>
+        <h2>Lo que cambia en la temporada</h2>
+      </div>
+      <div class="tabla-wrap revela">
+        <table class="comparar">
+          <thead><tr><th scope="col"></th><th scope="col">Cuaderno y Excel</th><th scope="col">Apps genéricas</th><th scope="col" class="destacada">Plataforma Cafetalera</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Registro sin internet</th><td class="si"><svg><use href="#i-check"/></svg></td><td class="no"><svg><use href="#i-x"/></svg></td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Conversión a grano oro y humedad</th><td class="no"><svg><use href="#i-x"/></svg></td><td class="no"><svg><use href="#i-x"/></svg></td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Varios centros de acopio consolidados</th><td class="no"><svg><use href="#i-x"/></svg></td><td class="parcial">Parcial</td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Trazabilidad por socio y entrega</th><td class="no"><svg><use href="#i-x"/></svg></td><td class="no"><svg><use href="#i-x"/></svg></td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Liquidaciones automáticas</th><td class="no"><svg><use href="#i-x"/></svg></td><td class="parcial">Parcial</td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Roles y control de accesos</th><td class="no"><svg><use href="#i-x"/></svg></td><td class="parcial">Parcial</td><td class="si destacada"><svg><use href="#i-check"/></svg></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="seccion" id="origen">
+      <div class="centro revela">
+        <span class="pre">Hecho para el norte cafetalero</span>
+        <h2>Diseñada para la montaña, donde la señal no llega</h2>
+        <p class="lead">Matagalpa, Jinotega y Nueva Segovia: fincas de altura, caminos difíciles y centros de acopio lejos de la oficina. Ahí es donde la plataforma tiene que funcionar.</p>
+      </div>
+      <div class="galeria">
+        <figure class="g-alta revela"><img src="img/jinotega.jpg" alt="Paisaje montañoso de cafetales en el departamento de Jinotega" loading="lazy"><figcaption><b>Jinotega</b>Rebecca Ore · CC BY-SA 3.0</figcaption></figure>
+        <figure class="revela"><img src="img/saco-matagalpa.jpg" alt="Trabajador carga un saco de café en una finca cerca de Matagalpa" loading="lazy"><figcaption><b>Matagalpa</b>Adam Jones · CC BY-SA 2.0</figcaption></figure>
+        <figure class="revela"><img src="img/secado-matagalpa.jpg" alt="Granos de café secándose al sol en una finca de Matagalpa" loading="lazy"><figcaption><b>Secado, Matagalpa</b>Adam Jones · CC BY-SA 2.0</figcaption></figure>
+        <figure class="revela"><img src="img/planta-quilali.jpg" alt="Planta de café cerca de Quilalí, Nueva Segovia" loading="lazy"><figcaption><b>Quilalí, Nueva Segovia</b>Elizabeth Sampson · CC BY-SA 3.0</figcaption></figure>
+        <figure class="revela"><img src="img/granos-matagalpa.jpg" alt="Detalle de granos de café y cáscaras en Matagalpa" loading="lazy"><figcaption><b>Grano y pulpa, Matagalpa</b>Adam Jones · CC BY-SA 2.0</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- FUNCIONES -->
+    <section class="seccion seccion-crema" id="funciones">
+      <div class="centro revela">
+        <span class="pre">Todo incluido</span>
+        <h2>Una plataforma especializada, no una genérica adaptada</h2>
+      </div>
+      <div class="funciones">
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-nube-off"/></svg></span><b>Primero sin conexión</b><p>Cada entrega se guarda en el teléfono y se envía sola cuando vuelve la señal.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-sync"/></svg></span><b>Sincronización automática</b><p>La oficina ve lo que pasa en cada centro de acopio sin llamadas ni mensajes.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-gota"/></svg></span><b>Humedad e impurezas</b><p>Descuentos aplicados con una regla única y visible para todos.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-ruta"/></svg></span><b>Trazabilidad</b><p>Cada saco ligado a su socio, su centro, su fecha y su acopiador.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-recibo"/></svg></span><b>Liquidaciones</b><p>Suma entregas, descuenta anticipos y genera la hoja de pago en C$.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-escudo"/></svg></span><b>Seguridad</b><p>Roles, contraseñas seguras, PIN por acopiador y bitácora de cambios.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-volumen"/></svg></span><b>Ayuda por voz</b><p>La app explica cada paso en voz alta para quien no está acostumbrado a la tecnología.</p></div>
+        <div class="funcion revela"><span class="ico"><svg><use href="#i-usuarios"/></svg></span><b>Capacitación en campo</b><p>Acompañamos al personal antes y durante la cosecha.</p></div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="seccion" id="planes">
+      <div class="centro revela">
+        <span class="pre">Planes</span>
+        <h2>Cuesta menos que los errores que evita</h2>
+        <div class="moneda" role="group" aria-label="Moneda">
+          <button class="activo" data-moneda="NIO" aria-pressed="true">C$ córdobas</button>
+          <button data-moneda="USD" aria-pressed="false">US$ dólares</button>
+        </div>
+      </div>
+      <div class="planes">
+        <article class="plan revela">
+          <h3>Plan Piloto</h3>
+          <p class="plan-precio"><b data-usd="500">−</b><span>por temporada</span></p>
+          <p>Para conocer la plataforma con un centro de acopio.</p>
+          <ul class="lista-check"><li><svg><use href="#i-check"/></svg> Implementación inicial</li><li><svg><use href="#i-check"/></svg> Capacitación del personal</li><li><svg><use href="#i-check"/></svg> Soporte durante la prueba</li></ul>
+          <a class="btn btn-borde" href="#demo" data-plan="Plan Piloto">Empezar con un piloto</a>
+        </article>
+        <article class="plan plan-destacado revela">
+          <span class="plan-cinta">Recomendado</span>
+          <h3>Plan Cooperativa</h3>
+          <p class="plan-precio"><b data-usd="1200">−</b><span>al año</span></p>
+          <p>La plataforma completa para toda la cooperativa.</p>
+          <ul class="lista-check"><li><svg><use href="#i-check"/></svg> Panel web administrativo</li><li><svg><use href="#i-check"/></svg> App móvil para acopiadores</li><li><svg><use href="#i-check"/></svg> Liquidaciones y reportes</li><li><svg><use href="#i-check"/></svg> Soporte por WhatsApp y llamada</li></ul>
+          <a class="btn btn-oro" href="#demo" data-plan="Plan Cooperativa">Solicitar demostración</a>
+        </article>
+        <article class="plan revela">
+          <h3>Plan Cooperativa Plus</h3>
+          <p class="plan-precio"><b data-usd="1800">−</b><span>al año</span></p>
+          <p>Para cooperativas grandes con muchos centros de acopio.</p>
+          <ul class="lista-check"><li><svg><use href="#i-check"/></svg> Todo el Plan Cooperativa</li><li><svg><use href="#i-check"/></svg> Soporte ampliado</li><li><svg><use href="#i-check"/></svg> Acompañamiento en plena cosecha</li></ul>
+          <a class="btn btn-borde" href="#demo" data-plan="Plan Cooperativa Plus">Hablar con un asesor</a>
+        </article>
+      </div>
+      <p class="nota centro" id="notaMoneda"></p>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="seccion seccion-crema" id="preguntas">
+      <div class="angosto">
+        <div class="centro revela">
+          <span class="pre">Preguntas frecuentes</span>
+          <h2>Lo que nos preguntan las juntas directivas</h2>
+        </div>
+        <div class="faq revela">
+          <details><summary>¿Qué pasa si en el centro de acopio no hay internet?</summary><p>La app guarda cada entrega en el teléfono y entrega el recibo igual. Cuando el acopiador encuentra señal, los registros suben solos a la oficina. No se pierde nada.</p></details>
+          <details><summary>Nuestros acopiadores no usan aplicaciones. ¿Podrán usarla?</summary><p>Sí. La app tiene pocos pasos, botones grandes, colores claros y ayuda por voz. Además, el plan incluye capacitación presencial antes de la cosecha.</p></details>
+          <details><summary>¿Podemos usar nuestros propios factores de conversión y precios?</summary><p>Sí. La administración configura el factor de grano oro, la humedad base, la tara por saco, las retenciones y el precio de cada temporada.</p></details>
+          <details><summary>¿Quién puede ver los montos de dinero?</summary><p>Cada usuario tiene un rol. Los acopiadores solo ven sus entregas; la gerencia y la administración ven liquidaciones y reportes. Todos los cambios quedan en una bitácora.</p></details>
+          <details><summary>¿Cómo empezamos?</summary><p>Con una demostración gratuita y luego un piloto en uno o dos centros de acopio durante una temporada. Si funciona para ustedes, se extiende a toda la cooperativa.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="demo" id="demo">
+      <img class="demo-foto" src="img/productor-celular.jpg" alt="" loading="lazy">
+      <div class="demo-velo"></div>
+      <div class="demo-in">
+        <div class="demo-txt revela">
+          <span class="pre">Demostración gratuita</span>
+          <h2>Del centro de acopio a la administración, todo bajo control.</h2>
+          <p>Te mostramos la plataforma con los datos de tu cooperativa, en tu oficina o en línea. Sin compromiso.</p>
+          <ul class="demo-puntos">
+            <li><svg><use href="#i-mapa"/></svg> Visitas en Matagalpa, Jinotega y Nueva Segovia</li>
+            <li><svg><use href="#i-mensaje"/></svg> Atención por WhatsApp y llamada</li>
+          </ul>
+        </div>
+        <form class="formulario revela" id="formDemo" novalidate>
+          <h3>Solicita tu demostración</h3>
+          <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
+          <label>Cooperativa<input name="coop" required autocomplete="organization"></label>
+          <div class="fila">
+            <label>Cargo
+              <select name="cargo"><option>Gerencia</option><option>Junta directiva</option><option>Administración</option><option>Otro</option></select>
+            </label>
+            <label>Centros de acopio<input name="centros" type="number" min="1" value="1" inputmode="numeric"></label>
+          </div>
+          <label>Teléfono o WhatsApp<input name="tel" required inputmode="tel" placeholder="8888 8888" autocomplete="tel"></label>
+          <label>Plan de interés
+            <select name="plan" id="selPlan"><option>Plan Piloto</option><option selected>Plan Cooperativa</option><option>Plan Cooperativa Plus</option><option>Aún no sé</option></select>
+          </label>
+          <button class="btn btn-oro btn-full" type="submit">Quiero mi demostración</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+          <p class="nota">Prototipo académico: el formulario valida los datos pero no los envía a ningún servidor.</p>
+        </form>
+      </div>
+      <p class="hero-credito">Foto ilustrativa: IanCamp, productor de cacao en Ghana · CC BY-SA 4.0</p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-in">
+      <div>
+        <a class="marca" href="#inicio"><span class="marca-logo"><svg><use href="#i-hoja"/></svg></span><span><b>Plataforma Cafetalera</b><small>Tecnología que conecta cada grano con su origen</small></span></a>
+        <p class="pie-links"><a href="https://plataforma-cafetalera.vercel.app/">Probar el prototipo</a><a href="https://plataforma-cafetalera.vercel.app/campo.html">App de campo</a><a href="https://plataforma-cafetalera.vercel.app/panel.html">Panel web</a><a href="https://plataforma-cafetalera.vercel.app/presentacion/">Presentación de la idea</a></p>
+      </div>
+      <div class="creditos">
+        <b>Créditos de las fotografías</b>
+        <p>Todas son fotografías reales de Wikimedia Commons, usadas bajo licencias Creative Commons. Ninguna imagen fue generada por IA.</p>
+        <ul>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Cafe,_Tuma_La_Dalia.jpg" target="_blank" rel="noopener">Café, Tuma La Dalia</a> · Maren Barbee · CC BY-SA 2.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Nicaragua-688.jpg" target="_blank" rel="noopener">Pesaje de cosecha, Nicaragua</a> · BluesyPete · CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Woman_coffee_farmer_in_Nicaragua.jpg" target="_blank" rel="noopener">Productora de café en Nicaragua</a> · ElleMegan · CC BY-SA 4.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Coffee_County_in_Jinotega_Department,_Nicaragua.jpg" target="_blank" rel="noopener">Zona cafetalera de Jinotega</a> · Rebecca Ore · CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Man_Hauls_Sack_of_Coffee_Beans_-_Finca_Esperanza_Verde_-_Near_Matagalpa_-_Nicaragua_(31275767420).jpg" target="_blank" rel="noopener">Saco de café, Matagalpa</a>, <a href="https://commons.wikimedia.org/wiki/File:Still_Life_with_Coffee_Beans_Drying_-_Finca_Esperanza_Verde_-_Near_Matagalpa_-_Nicaragua_(30806932004).jpg" target="_blank" rel="noopener">secado</a> y <a href="https://commons.wikimedia.org/wiki/File:Detail_of_Coffee_Beans_and_Skins_-_Finca_Esperanza_Verde_-_Near_Matagalpa_-_Nicaragua_(31502058092).jpg" target="_blank" rel="noopener">grano</a> · Adam Jones · CC BY-SA 2.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Coffee_Plant_near_the_Quilal%C3%AD_-_San_Juan_del_R%C3%ADo_Coco_border.jpg" target="_blank" rel="noopener">Planta de café cerca de Quilalí</a> · Elizabeth Sampson · CC BY-SA 3.0</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Ghanaian_Cocoa_Farmer_on_Phone.jpg" target="_blank" rel="noopener">Productor con teléfono, Ghana</a> · IanCamp · CC BY-SA 4.0</li>
+        </ul>
+        <p>Las capturas de pantalla son del prototipo propio, con datos ficticios.</p>
+      </div>
+    </div>
+    <p class="pie-firma">Proyecto académico · Ingeniería en Computación · Nicaragua, 2026 · María Celeste Guevara</p>
+  </footer>
+
+  <script src="js/promo.js"></script>
+</body>
+</html>
